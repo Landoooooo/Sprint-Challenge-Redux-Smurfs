@@ -9,12 +9,19 @@ class SmurfCard extends React.Component {
         }
     }
 
+    componentDidMount(){
+        console.log(this.props.id)
+    }
+
     render(){
         return(
             <div>
                 <div>{this.props.smurf.name}</div>
                 <div>{this.props.smurf.age}</div>
                 <div>{this.props.smurf.height}</div>
+                <button onClick={() => {
+                    this.props.deleteSmurfs(this.props.smurf.id);
+                }}>Delete</button>
             </div>
         )
     }

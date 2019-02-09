@@ -27,7 +27,7 @@ class SmurfList extends React.Component {
         return(
             <List>
                 {this.props.smurfs.map(smurf => {
-                    return <SmurfCard smurf={smurf}/>
+                    return <SmurfCard smurf={smurf} id={smurf.id}/>
                 })}
             </List>
         )
@@ -35,7 +35,6 @@ class SmurfList extends React.Component {
 }
 
 const mstp = state => {
-    console.log(state.loading)
     return{
         smurfs: state.smurfs,
         loading: state.loading
